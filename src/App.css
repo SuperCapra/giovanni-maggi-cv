@@ -32,6 +32,10 @@ img {
   border-radius: 50%;
 }
 
+p {
+  margin: 2%
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
