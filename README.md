@@ -1,1 +1,1 @@
-# giovanni-maggi-cv
+# Repository that will serve as quick portfolio of me
