@@ -30,9 +30,9 @@ class Homepage extends React.Component{
             Ciao sono <code>Giovanni Maggi</code> e questa sarà la mia pagina :)
           </p>
           <p>Stay tuned for more</p>
-          {this.return42()}
+          {/* {this.return42()}
           {this.renderNumber(9)}
-          <Test/>
+          <Test/> */}
         </header>
       </div>
     )
