@@ -2,6 +2,8 @@ import logo from './faccioneWhited.png';
 import './App.css';
 import React from 'react';
 import vocabulary from './languages.js'
+const active = process.env.ACTIVE || true;
+const message = process.env.MESSAGE || 'Page inactive (for now)';
 
 let language = undefined
 let stage = 'LanguageSelection'
@@ -31,6 +33,11 @@ class Homepage extends React.Component{
   }
   
   routesToLanguage() {
+    if(!active) {
+      return (
+        <code className="code-inactive">{message}</code>
+      )
+    }
     if(this.state.stage === 'LanguageSelection') return (
       <LanguageSelection onClick={value => this.languageSelection(value)}/>
     )
@@ -79,13 +86,14 @@ class FirstStep extends React.Component {
   render() {
     return(
       <div>
-        {/* <div className="radio-lang">
-          <RadioLang onChangeLanguage={value => this.props.onChangeLanguage(value)}/>
-        </div> */}
         <div className="wrapper-image">
           <img src={logo} className="App-logo" alt="avatar" />
         </div>
         <p>{vocabulary[language].firstStep.p1} <code className="code-name">Giovanni Maggi</code>: {vocabulary[language].firstStep.p2}</p>
+        <p>
+          <code className="code-cv-classic" onClick={() => window.open(vocabulary[language].cv, '_blank')}>{vocabulary[language].firstStep.downloadCV}</code> 
+          <code className="code-cv-interactive">{vocabulary[language].firstStep.interactiveCV}</code>
+        </p>
       </div>
     )
   }

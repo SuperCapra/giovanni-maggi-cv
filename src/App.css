@@ -8,6 +8,11 @@
   --palette-white: #edf6f9;
 }
 
+.code-inactive {
+  background: var(--palette-pink); 
+  color: var(--palette-background);
+}
+
 .App {
   padding: 1%;
   background-color: var(--palette-background);
@@ -99,4 +104,27 @@ img {
   cursor: pointer;
   background: var(--palette-pink);
   color: var(--palette-background);
+}
+
+
+.code-cv-classic {
+  color: var(--palette-background);
+  background: var(--palette-watergreen);
+}
+
+.code-cv-interactive {
+  color: var(--palette-background);
+  background: var(--palette-lightblue);
+}
+
+.code-cv-classic:hover {
+  cursor: pointer;
+  color: var(--palette-white);
+  background: var(--palette-background);
+}
+
+.code-cv-interactive:hover {
+  cursor: pointer;
+  color: var(--palette-white);
+  background: var(--palette-background);
 }
