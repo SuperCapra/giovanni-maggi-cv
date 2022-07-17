@@ -6,7 +6,6 @@ const active = process.env.ACTIVE || 'true';
 const message = process.env.MESSAGE || 'Page inactive (for now)';
 
 let language = undefined
-let stage = 'LanguageSelection'
 let languages = [{value : 'it', label: '[Italiano]'},{value : 'en', label: '[English]'}]
 
 function App() {
@@ -33,6 +32,7 @@ class Homepage extends React.Component{
   }
   
   routesToLanguage() {
+    console.log('process.env.ACTIVE:', process.env.ACTIVE)
     if(!Boolean(active)) {
       return (
         <code className="code-inactive">{message}</code>
