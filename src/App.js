@@ -2,7 +2,7 @@ import logo from './faccioneWhited.png';
 import './App.css';
 import React from 'react';
 import vocabulary from './languages.js'
-const active = process.env.ACTIVE || 'true';
+const active = process.env.ACTIVE || true;
 const message = process.env.MESSAGE || 'Page inactive (for now)';
 
 let language = undefined
@@ -101,8 +101,6 @@ class FirstStep extends React.Component {
 
 class RadioLang extends React.Component {
   returnClass(value) {
-    console.log('value', value)
-    console.log('language', language)
     if(language !== undefined && value === language) return 'lang-selected'
     return 'lang-unselected'
   }
