@@ -2,7 +2,7 @@ import logo from './faccioneWhited.png';
 import './App.css';
 import React from 'react';
 import vocabulary from './languages.js'
-const active = process.env.ACTIVE || true;
+const active = process.env.ACTIVE || 'true';
 const message = process.env.MESSAGE || 'Page inactive (for now)';
 
 let language = undefined
@@ -33,7 +33,7 @@ class Homepage extends React.Component{
   }
   
   routesToLanguage() {
-    if(!active) {
+    if(!Boolean(active)) {
       return (
         <code className="code-inactive">{message}</code>
       )
