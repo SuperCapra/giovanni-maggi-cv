@@ -1,4 +1,4 @@
-import logo from './faccioneWhitedLow.png';
+import logo from './faccioneWhitedLow.jpg';
 import './App.css';
 import React from 'react';
 import vocabulary from './languages.js'
