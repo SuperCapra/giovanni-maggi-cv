@@ -1,3 +1,3 @@
-# React App that will serve as pernal manifest
+# React App that will serve as personal manifest
 
-The intended purposo for this page is to leave a digital cv for everyone
+The intended purpose for this page is to leave a digital cv for everyone
