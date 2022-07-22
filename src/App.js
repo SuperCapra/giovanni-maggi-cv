@@ -87,11 +87,13 @@ class FirstStep extends React.Component {
     return(
       <div>
         <div className="wrapper-image">
-          <img src={logo} className="App-logo" alt="avatar" />
+          <img src={logo} className="App-logo img-bordered" alt="avatar" />
         </div>
         <p>{vocabulary[language].firstStep.p1} <code className="code-name">Giovanni Maggi</code>: {vocabulary[language].firstStep.p2}</p>
-        <p>
-          <code className="code-cv-classic" onClick={() => window.open(vocabulary[language].cv, '_blank')}>{vocabulary[language].firstStep.downloadCV}</code> 
+        <p className="p-unmargin">
+          <code className="code-cv-classic" onClick={() => window.open(vocabulary[language].cv, '_blank')}>{vocabulary[language].firstStep.downloadCV}</code>
+        </p>
+        <p className="p-unmargin p-right">
           <code className="code-cv-interactive">{vocabulary[language].firstStep.interactiveCV}</code>
         </p>
       </div>
@@ -107,7 +109,7 @@ class RadioLang extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="left-container">
         <code className={this.returnClass(languages[0].value)} onClick={() => this.props.onChangeLanguage('it')}>{languages[0].value.toUpperCase()}</code> <code className={this.returnClass(languages[1].value)} onClick={() => this.props.onChangeLanguage('en')}>{languages[1].value.toUpperCase()}</code>
       </div>
     )

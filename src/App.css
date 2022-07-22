@@ -17,7 +17,7 @@
   padding: 1%;
   background-color: var(--palette-background);
   font-size: calc(10px + 2vmin);
-  text-align: left;
+  text-align: center;
 }
 
 .App-logo {
@@ -25,11 +25,11 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   min-height: 100vh;
@@ -48,8 +48,8 @@
   text-align: center;
 }
 
-img {
-  border-width: 2px;
+.img-bordered {
+  border-width: 3px;
   border-style: solid solid solid dashed;
   border-color: var(--palette-background) var(--palette-background) var(--palette-pink) var(--palette-yellow);
   border-radius: 50%;
@@ -59,12 +59,13 @@ img {
   border-radius: 50%;
 }
 
+
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(100deg);
   }
 } */
 
@@ -82,6 +83,10 @@ img {
   cursor: pointer;
   color: var(--palette-white);
   background: var(--palette-background);
+}
+
+.left-container{
+  text-align: left;
 }
 
 .radio-lang {
@@ -127,4 +132,18 @@ img {
   cursor: pointer;
   color: var(--palette-white);
   background: var(--palette-background);
+}
+
+.p-unmargin {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.p-right {
+  transform: translateX(12%);
+  font-size: calc(15px + 2vmin);
+}
+
+.camouflage{
+  color: var(--palette-background);
 }
