@@ -10,6 +10,9 @@ let vocabulary = {
         cv : 'https://drive.google.com/file/d/1K2vyvMQPG4079SJUa6dfvZMZlbZFJ5sr/view?usp=sharing',
         back: {
             back: 'back'
+        },
+        interactive: {
+            a: 'ciao'
         }
     },
     en: {
@@ -22,6 +25,9 @@ let vocabulary = {
         cv : 'https://drive.google.com/file/d/19fnw7uPyH-ItG5v1Tqxz7NhmrNUf-9wo/view?usp=sharing',
         back: {
             back: 'back'
+        },
+        interactive: {
+            a: 'hello'
         }
     }
 }

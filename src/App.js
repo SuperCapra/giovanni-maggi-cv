@@ -22,17 +22,27 @@ class Homepage extends React.Component{
     super(props);
     this.state = {
       stage : stage,
-      i : 0
+      stageHistory : stageHistory
     }
   }
 
   changeStage(value) {
     console.log('handleClick: ', value)
+    if(value.stage) {
+      stage = value.stage
+      if(value.stage === 'LanguageSelection') {
+        stageHistory = ['LanguageSelection']
+        language = undefined
+      } else if(stageHistory[stageHistory.length - 1] !== value.stage) {
+        stageHistory.push(value.stage)
+      }
+    }
+    console.log('stageHistory', stageHistory)
     if(value.language) language = value.language
     console.log('language: ', language)
-    if(value.stage) stage = value.stage
     this.setState({
-      stage : stage
+      stage : stage,
+      stageHistory : stageHistory
     })
   }
   
@@ -59,9 +69,16 @@ class Homepage extends React.Component{
     return (<div></div>)
   }
 
+  goBack() {
+    console.log('stageHistory', stageHistory)
+    stageHistory.pop()
+    this.changeStage({stage: stageHistory[stageHistory.length - 1]})
+    console.log('stageHistory', stageHistory)
+  }
+
   returnBack() {
     if(stageHistory.length > 1) {
-      return (<Back/>)
+      return (<Back onBack={() => this.goBack()}/>)
     } else {
       return (<div></div>)
     }
@@ -156,7 +173,7 @@ class Interactive extends React.Component {
   render() {
     return(
       <div className="left-container">
-        vocabulary[language].back.back
+        {vocabulary[language].interactive.a}
       </div>
     )
   }
@@ -165,8 +182,8 @@ class Interactive extends React.Component {
 class Back extends React.Component {
   render() {
     return(
-      <div className="left-container">
-          vocabulary[language].firstStep.interactiveCV
+      <div className="left-container" onClick={() => this.props.onBack()}>
+        {vocabulary[language].back.back}
       </div>
     )
   }
