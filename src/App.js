@@ -169,7 +169,6 @@ class RadioLang extends React.Component {
 }
 
 class Interactive extends React.Component {
-
   render() {
     return(
       <div className="left-container">
