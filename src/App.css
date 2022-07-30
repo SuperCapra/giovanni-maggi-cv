@@ -111,6 +111,16 @@
   color: var(--palette-background);
 }
 
+.back{
+  color: var(--palette-background);
+  background: var(--palette-lightblue);
+}
+
+.back:hover{
+  cursor: pointer;
+  color: var(--palette-background);
+  background: var(--palette-pink);
+}
 
 .code-cv-classic {
   color: var(--palette-background);
