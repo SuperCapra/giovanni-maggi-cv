@@ -162,7 +162,6 @@ class RadioLang extends React.Component {
             <code key={x.value} className={this.returnClass(x.value)} onClick={() => this.props.onChangeLanguage({language: x.value})}>{x.value.toUpperCase()}</code>
           )
         })}
-        {/* {!this.returnBack()} */}
       </div>
     )
   }
