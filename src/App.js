@@ -35,6 +35,7 @@ class Homepage extends React.Component{
         language = undefined
       } else if(stageHistory[stageHistory.length - 1] !== value.stage) {
         stageHistory.push(value.stage)
+        if(value.stage === 'Interactive') this.returnRadioLang()
       }
     }
     console.log('stageHistory', stageHistory)
@@ -47,7 +48,6 @@ class Homepage extends React.Component{
   }
   
   routesToStage() {
-    console.log('process.env.ACTIVE:', process.env.ACTIVE)
     if(!Boolean(active)) {
       return (
         <code className="code-inactive">{message}</code>
@@ -64,7 +64,7 @@ class Homepage extends React.Component{
 
   returnRadioLang() {
     if(language) return (
-      <RadioLang className="radio-lang" onChangeLanguage={value => this.changeStage(value)}/>
+      <RadioLang className="radio-lang" onChangeLanguage={value => this.changeStage(value)} onBack={() => this.goBack()}/>
     )
     return (<div></div>)
   }
@@ -77,7 +77,7 @@ class Homepage extends React.Component{
   }
 
   returnBack() {
-    if(stageHistory.length > 1) {
+    if(stageHistory[stageHistory.length - 1] === 'Interactive') {
       return (<Back onBack={() => this.goBack()}/>)
     } else {
       return (<div></div>)
@@ -143,6 +143,17 @@ class FirstStep extends React.Component {
 }
 
 class RadioLang extends React.Component {
+  // returnBack() {
+  //   console.log('hey', stageHistory[stageHistory.length - 1])
+  //   if(stageHistory[stageHistory.length - 1] === 'Interactive') {
+      
+  //     console.log('hey inside', stageHistory[stageHistory.length - 1])
+  //     return (<code className="back" onClick={() => this.props.onBack()}>{vocabulary[language].back.back}</code>)
+  //   } else {
+  //     (<div></div>)
+  //   }
+  // }
+
   cycleCodeLanguages() {
     return(
       <div>
@@ -154,6 +165,7 @@ class RadioLang extends React.Component {
       </div>
     )
   }
+
   returnClass(value) {
     if(language !== undefined && value === language) return 'lang-selected'
     return 'lang-unselected'
@@ -169,7 +181,6 @@ class RadioLang extends React.Component {
 }
 
 class Interactive extends React.Component {
-
   render() {
     return(
       <div className="left-container">
@@ -182,8 +193,8 @@ class Interactive extends React.Component {
 class Back extends React.Component {
   render() {
     return(
-      <div className="left-container" onClick={() => this.props.onBack()}>
-        {vocabulary[language].back.back}
+      <div className="left-container">
+        <code className="back" onClick={() => this.props.onBack()}>{vocabulary[language].back.back}</code>
       </div>
     )
   }
