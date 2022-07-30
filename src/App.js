@@ -76,19 +76,19 @@ class Homepage extends React.Component{
     console.log('stageHistory', stageHistory)
   }
 
-  returnBack() {
-    if(stageHistory.length > 1) {
-      return (<Back onBack={() => this.goBack()}/>)
-    } else {
-      return (<div></div>)
-    }
-  }
+  // returnBack() {
+  //   if(stageHistory.length > 1) {
+  //     return (<Back onBack={() => this.goBack()}/>)
+  //   } else {
+  //     return (<div></div>)
+  //   }
+  // }
 
   render() {
     return (    
       <div className="App">
           {this.returnRadioLang()}
-          {this.returnBack()}
+          {/* {this.returnBack()} */}
         <div className="App-header">
           <div>
             {this.routesToStage()}
@@ -178,14 +178,14 @@ class Interactive extends React.Component {
   }
 }
 
-class Back extends React.Component {
-  render() {
-    return(
-      <div className="left-container" onClick={() => this.props.onBack()}>
-        {vocabulary[language].back.back}
-      </div>
-    )
-  }
-}
+// class Back extends React.Component {
+//   render() {
+//     return(
+//       <div className="left-container" onClick={() => this.props.onBack()}>
+//         {vocabulary[language].back.back}
+//       </div>
+//     )
+//   }
+// }
 
 export default App;
